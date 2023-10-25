@@ -3,21 +3,25 @@ package Vistas;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelBilletera extends JPanel implements FrameSize{
+public class PanelBilletera extends JPanel implements FrameSize {
     public PanelBilletera() {
     }
     @Override
     public void paint(Graphics g) {
+        super.paint(g);
 
+        // Variables de ajuste
         int distanciaAlBordeIzquierdo = 25;
 
-        super.paint(g);
+        // Poligono semitransparente
         g.setColor(new Color(130,130,130,100));
         int[] xp = {0,200,150,0};
         int[] yp = {0,0,80,80};
         g.fillPolygon(xp,yp,4);
         g.setColor(new Color(180,180,180,100));
-        g.fillRect(0,80,150,frameY(-80));
+        g.fillRect(0,80,150,frameHeight(-80));
+
+        // Agregador de imagenes
         ImageIcon[] imageIcon = new ImageIcon[6];
         Image[] image = new Image[6];
         try {
@@ -29,10 +33,24 @@ public class PanelBilletera extends JPanel implements FrameSize{
             imageIcon[5] = new ImageIcon(getClass().getClassLoader().getResource("ayuda.png"));
             for(int i = 0; i < 6; i++) {
                 image[i] = imageIcon[i].getImage();
-                g.drawImage(image[i],distanciaAlBordeIzquierdo,frameY(i/6.2,0),null);
+                if(i == 0) {
+                    g.drawImage(image[i],distanciaAlBordeIzquierdo,frameHeight(),null);
+                } else {
+                    g.drawImage(image[i], distanciaAlBordeIzquierdo, frameHeight(i / 6.2, -30), null);
+                }
             }
         } catch (Exception e) {
             System.out.println("Error al cargar las imágenes de las monedas.");
+
+            // Pintado de representacion de emergencia
+            g.setColor(new Color(180,120,120));
+            g.setFont(new Font("Arial", Font.PLAIN, 20));
+            g.drawString("Dinero",distanciaAlBordeIzquierdo,50);
+            for(int i = 1; i < 5; i++) {
+                g.fillOval(distanciaAlBordeIzquierdo,frameHeight(i/6.2,-30),100,100);
+            }
+            g.setFont(new Font("Arial", Font.PLAIN, 80));
+            g.drawString("?",distanciaAlBordeIzquierdo,frameHeight(-100));
         }
     }
 }

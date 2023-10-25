@@ -3,7 +3,7 @@ package Vistas;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelInventario extends JPanel {
+public class PanelInventario extends JPanel implements FrameSize{
     public PanelInventario() {
     }
     @Override
@@ -12,12 +12,12 @@ public class PanelInventario extends JPanel {
         int distanciaAlBordeDerecho = 70;
 
         super.paint(g);
-        g.setColor(new Color(130,130,130,100));
-        int[] xp = {frameY()-145,frameY(),frameY(),frameY()-95};
+        g.setColor(new Color(130,130,110,100));
+        int[] xp = {frameX(-200),frameX(),frameX(),frameX(-150)};
         int[] yp = {0,0,80,80};
         g.fillPolygon(xp,yp,4);
-        g.setColor(new Color(180,180,180,100));
-        g.fillRect(frameY()-95,80,150,(int) Ventana.frame().windowSize().getHeight() -80);
+        g.setColor(new Color(180,180,160,100));
+        g.fillRect(frameX(-150),80,150,frameX(-80));
         ImageIcon[] imageIcon = new ImageIcon[3];
         Image[] image = new Image[3];
         try {
@@ -44,20 +44,13 @@ public class PanelInventario extends JPanel {
             for(int i = 0; i < 3; i++) {
                 image[i] = imageIcon[i].getImage();
                 if(i == 0){
-                    g.drawImage(image[i],frameY()-distanciaAlBordeDerecho,0,null);
+                    g.drawImage(image[i],frameX(-55 -distanciaAlBordeDerecho),0,null);
                 } else {
-                    g.drawImage(image[i], frameY() - distanciaAlBordeDerecho, frameX() * i - 130, null);
+                    g.drawImage(image[i], frameX(-55 - distanciaAlBordeDerecho), frameY(i/2.6,-130), null);
                 }
             }
         } catch (Exception e) {
             System.out.println("Error al cargar las imágenes del inventario.");
         }
-    }
-
-    private int frameX() {
-        return (int) ((Ventana.frame().windowSize().getHeight())/2.6);
-    }
-    private int frameY() {
-        return (int) ((Ventana.frame().windowSize().getWidth())-55);
     }
 }

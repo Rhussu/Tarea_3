@@ -5,10 +5,10 @@ import java.awt.*;
 
 public class Ventana extends JFrame {
     private static Ventana instancia;
-    private PanelPrincipal pp;
+    private PanelPrincipal panelPrincipal;
     private Ventana(){
-        pp = new PanelPrincipal();
-        this.add(pp);
+        panelPrincipal = new PanelPrincipal();
+        this.add(panelPrincipal);
         this.setTitle("Anger's App");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setMinimumSize(new Dimension(1000,800));

@@ -4,16 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelComprador extends JPanel {
-	private PanelBilletera pb;
-	private PanelInventario pi;
+	private PanelBilletera panelBilletera;
+	private PanelInventario panelInventario;
 	public PanelComprador() {
-		pb = new PanelBilletera();
-		pi = new PanelInventario();
+		panelBilletera = new PanelBilletera();
+		panelInventario = new PanelInventario();
 	}
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		pb.paint(g);
-		pi.paint(g);
+		panelBilletera.paint(g);
+		panelInventario.paint(g);
 	}
 }

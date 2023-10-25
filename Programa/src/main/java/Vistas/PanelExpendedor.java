@@ -2,7 +2,6 @@ package Vistas;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 public class PanelExpendedor extends JPanel {
     @Override

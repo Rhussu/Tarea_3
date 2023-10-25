@@ -12,11 +12,11 @@ public class PanelBilletera extends JPanel implements FrameSize{
         int distanciaAlBordeIzquierdo = 25;
 
         super.paint(g);
-        g.setColor(new Color(130,110,110,100));
+        g.setColor(new Color(130,130,130,100));
         int[] xp = {0,200,150,0};
         int[] yp = {0,0,80,80};
         g.fillPolygon(xp,yp,4);
-        g.setColor(new Color(180,160,160,100));
+        g.setColor(new Color(180,180,180,100));
         g.fillRect(0,80,150,frameY(-80));
         ImageIcon[] imageIcon = new ImageIcon[6];
         Image[] image = new Image[6];

@@ -4,12 +4,14 @@ package Modelos;
  * Esta clase abstracta es la base (superclase) para las distintas clases que representan una moneda de un valor específico.
  */
 public abstract class Moneda implements Comparable<Moneda> {
-    int serie;
+    private static int serieMon=0;
+    private int serie;
     /**
      * Constructor por defecto.
      */
-    public Moneda(int serie) {
-        this.serie=serie;
+    public Moneda() {
+        serie= serieMon;
+        serieMon+=1;
     }
 
     /**

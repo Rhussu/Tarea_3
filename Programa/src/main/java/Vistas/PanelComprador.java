@@ -1,9 +1,12 @@
 package Vistas;
 
+import Modelos.Comprador;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class PanelComprador extends JPanel {
+	private static Comprador comprador;
 	private PanelBilletera panelBilletera;
 	private PanelInventario panelInventario;
 	public PanelComprador() {
@@ -15,5 +18,9 @@ public class PanelComprador extends JPanel {
 		panelInventario = new PanelInventario();
 		add(panelBilletera);
 		add(panelInventario);
+	}
+
+	public static Comprador getComprador() {
+		return comprador;
 	}
 }

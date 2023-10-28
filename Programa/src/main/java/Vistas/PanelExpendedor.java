@@ -12,6 +12,7 @@ public class PanelExpendedor extends JPanel {
     private ButtonComprar comprar;
     private ButtonReset reset;
     private ButtonCancel cancel;
+    private ButtonVuelto vuelto;
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     public PanelExpendedor() {
@@ -24,6 +25,7 @@ public class PanelExpendedor extends JPanel {
         comprar = new ButtonComprar();
         reset = new ButtonReset();
         cancel = new ButtonCancel();
+        vuelto = new ButtonVuelto();
         setOpaque(false);
         setLayout(null);
         setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
@@ -35,6 +37,7 @@ public class PanelExpendedor extends JPanel {
         add(comprar);
         add(reset);
         add(cancel);
+        add(vuelto);
     }
     @Override
     public void paintComponent(Graphics g) {

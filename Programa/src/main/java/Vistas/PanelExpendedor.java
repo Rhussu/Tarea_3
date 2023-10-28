@@ -4,12 +4,28 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
+    private ButtonProducto coca;
+    private ButtonProducto sprite;
+    private ButtonProducto fanta;
+    private ButtonProducto snickers;
+    private ButtonProducto super8;
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     public PanelExpendedor() {
         super();
+        coca = new ButtonProducto("CocaPress");
+        sprite = new ButtonProducto("SpritePress");
+        fanta = new ButtonProducto("FantaPress");
+        snickers = new ButtonProducto("SnikPress");
+        super8 = new ButtonProducto("SuperPress");
         setOpaque(false);
+        setLayout(null);
         setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
+        add(coca);
+        add(sprite);
+        add(fanta);
+        add(snickers);
+        add(super8);
     }
     @Override
     public void paintComponent(Graphics g) {

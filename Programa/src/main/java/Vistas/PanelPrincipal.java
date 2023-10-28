@@ -22,7 +22,6 @@ public class PanelPrincipal extends JPanel {
             ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("fondo.png"));
             Image image = imageIcon.getImage();
             g.drawImage(image, 0, 0,null);
-            System.out.println("Fondo cargado con exito");
         } catch (Exception e) {
             System.out.println("Error al cargar el fondo.");
         }

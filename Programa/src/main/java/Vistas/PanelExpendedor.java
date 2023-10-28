@@ -1,9 +1,12 @@
 package Vistas;
 
+import Modelos.Expendedor;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
+    private static Expendedor expendedor;
     private ButtonProducto coca;
     private ButtonProducto sprite;
     private ButtonProducto fanta;
@@ -13,6 +16,7 @@ public class PanelExpendedor extends JPanel {
     private ButtonReset reset;
     private ButtonCancel cancel;
     private ButtonVuelto vuelto;
+    private ButtonMiProducto miProducto;
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     public PanelExpendedor() {
@@ -26,6 +30,7 @@ public class PanelExpendedor extends JPanel {
         reset = new ButtonReset();
         cancel = new ButtonCancel();
         vuelto = new ButtonVuelto();
+        miProducto = new ButtonMiProducto();
         setOpaque(false);
         setLayout(null);
         setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
@@ -38,6 +43,7 @@ public class PanelExpendedor extends JPanel {
         add(reset);
         add(cancel);
         add(vuelto);
+        add(miProducto);
     }
     @Override
     public void paintComponent(Graphics g) {
@@ -47,11 +53,12 @@ public class PanelExpendedor extends JPanel {
             ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("ExpConD.png"));
             Image image = imageIcon.getImage();
             g.drawImage(image,0, 0,null);
-            System.out.println("Fondo expendedor cargado con exito");
         } catch (Exception e) {
             System.out.println("Error al cargar la imagen del expendedor.");
         }
+    }
 
-
+    public static Expendedor getExpendedor() {
+        return expendedor;
     }
 }

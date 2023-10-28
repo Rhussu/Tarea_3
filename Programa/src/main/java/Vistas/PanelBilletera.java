@@ -37,7 +37,6 @@ public class PanelBilletera extends JPanel {
             ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("FondoMonedero.png"));
             Image image = imageIcon.getImage();
             g.drawImage(image,0,0,null);
-            System.out.println("Monedero cargado con exito");
         } catch (Exception e) {
             System.out.println("Error el monedero");
         }

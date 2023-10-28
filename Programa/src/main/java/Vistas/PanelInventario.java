@@ -47,9 +47,8 @@ public class PanelInventario extends JPanel {
                     g.drawImage(image,110,140,null);
                     break;
             }
-            System.out.println("Inventario cargado con exito");
-        } catch (Exception e) {
-            System.out.println("Error al cargar el Inventario");
+        } catch (NullPointerException e) {
+            System.out.println("Aun no se ha comprado nada");
         }
     }
 }

@@ -9,6 +9,7 @@ public class PanelExpendedor extends JPanel {
     private ButtonProducto fanta;
     private ButtonProducto snickers;
     private ButtonProducto super8;
+    private ButtonComprar comprar;
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     public PanelExpendedor() {
@@ -18,6 +19,7 @@ public class PanelExpendedor extends JPanel {
         fanta = new ButtonProducto("FantaPress");
         snickers = new ButtonProducto("SnikPress");
         super8 = new ButtonProducto("SuperPress");
+        comprar = new ButtonComprar();
         setOpaque(false);
         setLayout(null);
         setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
@@ -26,6 +28,7 @@ public class PanelExpendedor extends JPanel {
         add(fanta);
         add(snickers);
         add(super8);
+        add(comprar);
     }
     @Override
     public void paintComponent(Graphics g) {

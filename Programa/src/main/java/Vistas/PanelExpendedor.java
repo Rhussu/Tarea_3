@@ -39,5 +39,7 @@ public class PanelExpendedor extends JPanel {
         } catch (Exception e) {
             System.out.println("Error al cargar la imagen del expendedor.");
         }
+
+
     }
 }

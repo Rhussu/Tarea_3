@@ -29,12 +29,12 @@ public class ButtonProducto extends JButton {
                 setBounds(205,184,77,130);
                 tipo = TipoProducto.FANTA;
                 break;
-            case "SnikPress":
-                setBounds(60,40,50,30);
+            case "SuperPress":
+                setBounds(41,307,130,120);
                 tipo = TipoProducto.SNICKERS;
                 break;
-            case "SuperPress":
-                setBounds(10,40,30,30);
+            case "SnikPress":
+                setBounds(164,307,120,120);
                 tipo = TipoProducto.SUPER8;
                 break;
         }

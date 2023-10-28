@@ -8,18 +8,28 @@ package Modelos;
  */
 public class Expendedor{
     /** Depósitos que almacenan los tipos de productos o monedas*/
-    private Deposito<Bebida> coca = new Deposito<>();
-    private Deposito<Bebida> sprite= new Deposito<>();
-    private Deposito<Bebida> fanta= new Deposito<>();
-    private Deposito<Dulce> snikers= new Deposito<>();
-    private Deposito<Dulce> super8= new Deposito<>();
-    private Deposito<Moneda> monVu = new Deposito<>();
+    private Deposito<Bebida> coca;
+    private Deposito<Bebida> sprite;
+    private Deposito<Bebida> fanta;
+    private Deposito<Dulce> snikers;
+    private Deposito<Dulce> super8;
+    private Deposito<Moneda> monVu;
+    private Deposito<Moneda> monAlmacen;
+    private Producto depUnico;
 
     /**
      * Método constructor de la clase Expendedor. Inicializa los depósitos de cada producto asignándoles números de serie.
      * @param numProductos Cantidad de productos estándar que se generarán en todos los depósitos.
      */
     public Expendedor(int numProductos){
+        coca = new Deposito<>();
+        sprite= new Deposito<>();
+        fanta= new Deposito<>();
+        snikers= new Deposito<>();
+        super8= new Deposito<>();
+        monVu = new Deposito<>();
+        monAlmacen = new Deposito<>();
+
         for(int i=0; i<numProductos;i++){
             coca.add(new CocaCola(100+i));
             sprite.add(new Sprite(200+i));
@@ -38,7 +48,7 @@ public class Expendedor{
      * @throws NoHayProductoException Si el consumidor selecciona un tipo de producto no existente en el Enum o si no hay más productos en su depósito.
      * @throws PagoInsuficienteException Si la Moneda "m" es de un valor menor al precio del producto solicitado.
      */
-    public Producto comprarProducto(Moneda m,TipoProducto cual) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
+    public void comprarProducto(Moneda m,TipoProducto cual) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
 
         if(m==null){
             throw new PagoIncorrectoException();
@@ -54,7 +64,8 @@ public class Expendedor{
                     for (int i = 0; i < (m.getValor() - Precio.VALCOCA.getPrecio()) / 100; i++) {
                         monVu.add(new Moneda100());
                     }
-                    return coca.get();
+                    monAlmacen.add(m);
+                    depUnico = coca.get();
                 }
                 else {
                     monVu.add(m);
@@ -72,7 +83,8 @@ public class Expendedor{
                     for (int i = 0; i < (m.getValor() - Precio.VALSPRITE.getPrecio()) / 100; i++) {
                         monVu.add(new Moneda100());
                     }
-                    return sprite.get();
+                    monAlmacen.add(m);
+                    depUnico=sprite.get();
                 }
                 else {
                     monVu.add(m);
@@ -90,7 +102,8 @@ public class Expendedor{
                     for (int i = 0; i < (m.getValor() - Precio.VALFANTA.getPrecio()) / 100; i++) {
                         monVu.add(new Moneda100());
                     }
-                    return fanta.get();
+                    monAlmacen.add(m);
+                    depUnico=fanta.get();
                 }
                 else {
                     monVu.add(m);
@@ -108,7 +121,8 @@ public class Expendedor{
                     for (int i = 0; i < (m.getValor() - Precio.VALSNICK.getPrecio()) / 100; i++) {
                         monVu.add(new Moneda100());
                     }
-                    return snikers.get();
+                    monAlmacen.add(m);
+                    depUnico= snikers.get();
                 }
                 else {
                     monVu.add(m);
@@ -126,7 +140,8 @@ public class Expendedor{
                     for (int i = 0; i < (m.getValor() - Precio.VALSUPER8.getPrecio()) / 100; i++) {
                         monVu.add(new Moneda100());
                     }
-                    return super8.get();
+                    monAlmacen.add(m);
+                    depUnico = super8.get();
                 }
                 else {
                     monVu.add(m);
@@ -143,7 +158,6 @@ public class Expendedor{
                 monVu.add(m);
                 throw new NoHayProductoException();
         }
-        return null;
     }
 
     /**
@@ -152,5 +166,11 @@ public class Expendedor{
      */
     public Moneda getVuelto(){
         return monVu.get();
+    }
+
+    public Producto getProducto(){
+        Producto aux = depUnico;
+        depUnico = null;
+        return aux;
     }
 }

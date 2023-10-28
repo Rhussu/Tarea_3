@@ -19,7 +19,8 @@ public class Comprador {
      */
     public Comprador(Moneda moneda, TipoProducto cualProducto, Expendedor expendedor) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
         try {
-            sonido = expendedor.comprarProducto(moneda, cualProducto).consumir();
+            expendedor.comprarProducto(moneda, cualProducto);
+            sonido = expendedor.getProducto().consumir();
             while (true) {
                 try {
                     vuelto += expendedor.getVuelto().getValor();

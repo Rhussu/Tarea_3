@@ -4,25 +4,27 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelPrincipal extends JPanel {
-    private PanelComprador com;
-    private PanelExpendedor exp;
+    private PanelComprador panelComprador;
+    private PanelExpendedor panelExpendedor;
 
     public PanelPrincipal () {
-        exp = new PanelExpendedor();
-        com = new PanelComprador();
-        this.setBackground(Color.WHITE);
+        super();
+        setLayout(null);
+        panelComprador = new PanelComprador();
+        panelExpendedor = new PanelExpendedor();
+        add(panelComprador);
+        add(panelExpendedor);
     }
 
-    public void paint (Graphics g) {
-        super.paint(g);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         try {
             ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("fondo.png"));
             Image image = imageIcon.getImage();
             g.drawImage(image, 0, 0,null);
+            System.out.println("Fondo cargado con exito");
         } catch (Exception e) {
             System.out.println("Error al cargar el fondo.");
         }
-        com.paint(g);
-        exp.paint(g);
     }
 }

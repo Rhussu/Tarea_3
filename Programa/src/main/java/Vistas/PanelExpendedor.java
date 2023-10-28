@@ -4,27 +4,24 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
+    public static final int ALTO = 700;
+    public static final int ANCHO = 600;
+    public PanelExpendedor() {
+        super();
+        setOpaque(false);
+        setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
+    }
     @Override
-    public void paint(Graphics g) {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
 
-        Dimension tamañoExpendedor = new Dimension(500,626);
-
-        super.paint(g);
-        g.setColor(Color.DARK_GRAY);
         try {
-            ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("expendedor.png"));
+            ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("ExpConD.png"));
             Image image = imageIcon.getImage();
-            g.drawImage(image, (int) ((frameX() - tamañoExpendedor.getWidth()) / 2), (int) ((frameY() - tamañoExpendedor.getHeight()) / 2),null);
+            g.drawImage(image,0, 0,null);
+            System.out.println("Fondo expendedor cargado con exito");
         } catch (Exception e) {
             System.out.println("Error al cargar la imagen del expendedor.");
-            g.fillRect((int) ((frameX() - tamañoExpendedor.getWidth()) / 2),(int) ((frameY() - tamañoExpendedor.getHeight()) / 2),500,625);
         }
-    }
-
-    private int frameY() {
-        return (int) ((Ventana.frame().windowSize().getHeight()));
-    }
-    private int frameX() {
-        return (int) ((Ventana.frame().windowSize().getWidth()));
     }
 }

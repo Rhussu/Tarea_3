@@ -7,13 +7,13 @@ public class PanelComprador extends JPanel {
 	private PanelBilletera panelBilletera;
 	private PanelInventario panelInventario;
 	public PanelComprador() {
+		super();
+		setLayout(null);
+		setOpaque(false);
+		setBounds(0,0,Ventana.ANCHO, Ventana.ALTO);
 		panelBilletera = new PanelBilletera();
 		panelInventario = new PanelInventario();
-	}
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		panelBilletera.paint(g);
-		panelInventario.paint(g);
+		add(panelBilletera);
+		add(panelInventario);
 	}
 }

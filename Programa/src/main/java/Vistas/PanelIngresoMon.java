@@ -35,6 +35,7 @@ public class PanelIngresoMon extends JPanel {
             Image image;
             switch(moneda.getValor()) {
                 case 100:
+                    System.out.println("Se pinta la moneda de 100");
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini100.png"));
                     image = imageIcon.getImage();
                     g.drawImage(image,0,0,null);
@@ -58,7 +59,7 @@ public class PanelIngresoMon extends JPanel {
                     System.out.println("No se ha comprado nada aún");
             }
         } catch (NullPointerException e) {
-            System.out.println("Error al cargar la imagen de miniMoneda");
+            System.out.println("Moneda nula");
         }
     }
 

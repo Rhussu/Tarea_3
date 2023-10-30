@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelVuelto extends JPanel {
-    public static boolean hayvuelto = true;
+    public static boolean hayvuelto = false;
     public PanelVuelto() {
         super();
         setOpaque(false);
-        setBounds(324,526,43,43);
+        setBounds(324,526,34,34);
     }
 
-    public void setHayvuelto(boolean estado){
+    public static void setHayvuelto(boolean estado){
         hayvuelto=estado;
     }
 
@@ -25,11 +25,14 @@ public class PanelVuelto extends JPanel {
             if (hayvuelto) {
                 switch (PanelIngresoMon.getMonPago().getValor()){
                     case 100:
-                        imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini100.png"));
+                        imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini500.png"));
                         image = imageIcon.getImage();
                         g.drawImage(image,0,0,null);
                         break;
                 }
+            }
+            else{
+                System.out.println("No hay vuelto");
             }
 
         } catch (NullPointerException a){

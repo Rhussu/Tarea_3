@@ -1,5 +1,6 @@
 package Vistas;
 
+import Modelos.Moneda;
 import Modelos.NoHayProductoException;
 import Modelos.PagoIncorrectoException;
 import Modelos.PagoInsuficienteException;
@@ -12,6 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class ButtonCancel extends JButton {
+
     public ButtonCancel() {
         super();
         setOpaque(false);
@@ -25,13 +27,14 @@ public class ButtonCancel extends JButton {
             public void mouseClicked(MouseEvent e) {
                 if(PanelIngresoMon.hayMoneda()) {
                     try {
-                        PanelComprador.setComprador(PanelIngresoMon.getMonPago(), null);
-                    } catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException ex) {
-                        //PanelVuelto panelVuelto = new PanelVuelto();
+                        ButtonVuelto.setHayvuelto(true);
+                        ButtonVuelto.monedaVuelto=PanelIngresoMon.getMonPago();
+                        PanelComprador.setComprador(ButtonVuelto.monedaVuelto, null);
 
+                    } catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException ex) {
+                        Ventana.frame().repaint();
                     }
 
-                    PanelIngresoMon.setMonPago(null);
                     Ventana.frame().repaint();
                 }
             }

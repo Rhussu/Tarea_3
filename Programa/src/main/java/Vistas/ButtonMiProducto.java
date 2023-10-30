@@ -14,6 +14,7 @@ public class ButtonMiProducto extends JButton {
         setFocusPainted(false);
         setBackground(new Color(0, 0, 0, 0));
         setBounds(415,435,82,130);
+
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

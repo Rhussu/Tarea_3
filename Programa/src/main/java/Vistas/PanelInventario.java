@@ -9,6 +9,7 @@ public class PanelInventario extends JPanel {
         setOpaque(false);
         setBounds(Ventana.ANCHO - 243,0,243,Ventana.ALTO);
     }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -20,6 +21,7 @@ public class PanelInventario extends JPanel {
             imageIcon = new ImageIcon(getClass().getClassLoader().getResource("BolsaMon.png"));
             image = imageIcon.getImage();
             g.drawImage(image,110,540,null);
+
             switch(PanelComprador.getComprador().queConsumiste()) {
                 case "sprite":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Sprite.png"));

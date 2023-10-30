@@ -16,6 +16,7 @@ public class ButtonProducto extends JButton {
         setBorderPainted(false);
         setFocusPainted(false);
         setBackground(new Color(0, 0, 0, 0));
+
         switch (ruta) {
             case "CocaPress":
                 setBounds(41,184,82,130);

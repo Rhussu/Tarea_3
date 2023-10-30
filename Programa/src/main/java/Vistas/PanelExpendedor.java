@@ -1,12 +1,14 @@
 package Vistas;
 
 import Modelos.Expendedor;
+import Modelos.TipoProducto;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class PanelExpendedor extends JPanel {
     private static Expendedor expendedor;
+    public static TipoProducto tipoProducto = null;
     private ButtonProducto coca;
     private ButtonProducto sprite;
     private ButtonProducto fanta;
@@ -17,10 +19,20 @@ public class PanelExpendedor extends JPanel {
     private ButtonCancel cancel;
     private ButtonVuelto vuelto;
     private ButtonMiProducto miProducto;
+    private PanelIngresoMon ingresoMon;
+    //private PanelAlmacenVuelto panelAlmacenVuelto;
+    //private PanelVuelto panelVuelto;
+
+    //Trabajando aquí----------------------------------------
+
+    //----------------------------------------------
+
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
+
     public PanelExpendedor() {
         super();
+        expendedor = new Expendedor(2);
         coca = new ButtonProducto("CocaPress");
         sprite = new ButtonProducto("SpritePress");
         fanta = new ButtonProducto("FantaPress");
@@ -31,6 +43,11 @@ public class PanelExpendedor extends JPanel {
         cancel = new ButtonCancel();
         vuelto = new ButtonVuelto();
         miProducto = new ButtonMiProducto();
+        ingresoMon = new PanelIngresoMon();
+        //panelAlmacenVuelto = new PanelAlmacenVuelto();
+        //panelVuelto = new PanelVuelto();
+
+
         setOpaque(false);
         setLayout(null);
         setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
@@ -44,6 +61,9 @@ public class PanelExpendedor extends JPanel {
         add(cancel);
         add(vuelto);
         add(miProducto);
+        add(ingresoMon);
+        //add(panelAlmacenVuelto);
+        //add(panelVuelto);
     }
     @Override
     public void paintComponent(Graphics g) {

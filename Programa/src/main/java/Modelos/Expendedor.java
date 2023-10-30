@@ -168,6 +168,8 @@ public class Expendedor{
         return monVu.get();
     }
 
+    public int getCantMonVu(){ return  monVu.check(); }
+
     public Producto getProducto(){
         Producto aux = depUnico;
         depUnico = null;

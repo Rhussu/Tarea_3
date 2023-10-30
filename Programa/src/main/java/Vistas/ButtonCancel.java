@@ -1,7 +1,13 @@
 package Vistas;
 
+import Modelos.NoHayProductoException;
+import Modelos.PagoIncorrectoException;
+import Modelos.PagoInsuficienteException;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -17,7 +23,17 @@ public class ButtonCancel extends JButton {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
+                if(PanelIngresoMon.hayMoneda()) {
+                    try {
+                        PanelComprador.setComprador(PanelIngresoMon.getMonPago(), null);
+                    } catch (NoHayProductoException | PagoIncorrectoException | PagoInsuficienteException ex) {
+                        //PanelVuelto panelVuelto = new PanelVuelto();
+
+                    }
+
+                    PanelIngresoMon.setMonPago(null);
+                    Ventana.frame().repaint();
+                }
             }
 
             @Override

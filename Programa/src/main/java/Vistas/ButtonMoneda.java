@@ -7,9 +7,18 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Clase que es utilizada como botón para ingresar las monedas al expendedor.
+ */
 public class ButtonMoneda extends JButton {
     private Moneda m;
     private int precio;
+
+    /**
+     * Constructor personalizado en el que se le dan características al botón.
+     *
+     * @param precio El valor de la moneda que va a representar.
+     */
     public ButtonMoneda(int precio) {
         super();
         setOpaque(false);

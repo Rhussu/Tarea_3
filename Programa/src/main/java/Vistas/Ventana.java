@@ -23,8 +23,8 @@ public class Ventana extends JFrame {
         add(panelPrincipal);
         setTitle("Anger's App");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(1016,816));
-        setSize(1016,816);
+        setMinimumSize(new Dimension(1014,816));
+        setSize(1014,816);
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);

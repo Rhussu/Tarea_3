@@ -3,10 +3,16 @@ package Vistas;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel para el fondo e de la interfaz.
+ */
 public class PanelPrincipal extends JPanel {
     private PanelComprador panelComprador;
     private PanelExpendedor panelExpendedor;
-
+    
+    /**
+     * Constructo personalizado en el qeu se agregan los otros paneles.
+     */
     public PanelPrincipal () {
         super();
         setLayout(null);
@@ -15,7 +21,13 @@ public class PanelPrincipal extends JPanel {
         add(panelComprador);
         add(panelExpendedor);
     }
-
+    
+    /**
+     * Override del metodo paintComponent de JPanel para pintar el fondo.
+     *
+     * @param g Graficos a pintar.
+     */
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         try {

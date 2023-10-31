@@ -7,7 +7,7 @@ import java.io.*;
 import java.net.URL;
 
 /**
- * Clase que contiene el frame del programa y la musica.
+ * Clase que contiene el frame del programa y la música.
  */
 public class Ventana extends JFrame {
     public static final int ALTO = 800;
@@ -32,7 +32,7 @@ public class Ventana extends JFrame {
     }
 
     /**
-     * Método para reproducir la musica.
+     * Método para reproducir la música.
      */
     private void reproducirMusica() {
         try {

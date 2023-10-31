@@ -42,7 +42,6 @@ public class ButtonCancel extends JButton {
                     }catch (Exception a){
                         Ventana.frame().repaint();
                     }finally {
-                        PanelIngresoMon.setHayMoneda(false);
                         ButtonComprar.tipoProducto=null;
                     }
                 }

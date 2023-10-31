@@ -39,7 +39,7 @@ public class PanelAlmacenVuelto extends JPanel {
     }
 
     /**
-     * Override del metodo paintComponent(g) para graficar las monedas que estan en el monVu del expendedor.
+     * Override del método paintComponent(g) para graficar las monedas que están en el monVu del expendedor.
      *
      * @param g the <code>Graphics</code> object to protect
      */

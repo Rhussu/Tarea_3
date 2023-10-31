@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Panel para el fondo e de la interfaz.
+ * Panel para el fondo de la interfaz.
  */
 public class PanelPrincipal extends JPanel {
     private PanelComprador panelComprador;
     private PanelExpendedor panelExpendedor;
     
     /**
-     * Constructo personalizado en el qeu se agregan los otros paneles.
+     * Constructo personalizado en el que se agregan los otros paneles.
      */
     public PanelPrincipal () {
         super();
@@ -21,11 +21,11 @@ public class PanelPrincipal extends JPanel {
         add(panelComprador);
         add(panelExpendedor);
     }
-    
+
     /**
-     * Override del metodo paintComponent de JPanel para pintar el fondo.
+     * Override del método paintComponent de JPanel para pintar el fondo.
      *
-     * @param g Graficos a pintar.
+     * @param g the <code>Graphics</code> object to protect
      */
     @Override
     public void paintComponent(Graphics g) {

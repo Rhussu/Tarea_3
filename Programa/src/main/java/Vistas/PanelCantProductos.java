@@ -19,7 +19,7 @@ public class PanelCantProductos extends JPanel {
     }
 
     /**
-     * Método para poder recorrer los depositos.
+     * Método para poder recorrer los depósitos.
      *
      * @param num El número que indica cual deposito se quiere ver.
      * @return    El nombre del depósito que se quiere ver
@@ -42,7 +42,7 @@ public class PanelCantProductos extends JPanel {
     }
 
     /**
-     * Método para obtener la posición X de la imagen q se desea graficar.
+     * Método para obtener la posición X de la imagen que se desea graficar.
      *
      * @param num Indica la imagen que se quiere graficar con números del 0 al 4.
      * @return  El valor de la posición en el eje X.
@@ -65,7 +65,7 @@ public class PanelCantProductos extends JPanel {
     }
 
     /**
-     * Método para obtener la posición Y de la imagen q se desea graficar.
+     * Método para obtener la posición Y de la imagen que se desea graficar.
      *
      * @param num Indica la imagen que se quiere graficar con números del 0 al 4.
      * @return  El valor de la posición en el eje Y.

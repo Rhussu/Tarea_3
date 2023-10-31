@@ -12,7 +12,6 @@ import java.awt.event.MouseListener;
  */
 public class ButtonMoneda extends JButton {
     private Moneda m;
-    private int precio;
 
     /**
      * Constructor personalizado en el que se le dan características al botón.
@@ -26,7 +25,6 @@ public class ButtonMoneda extends JButton {
         setBorderPainted(false);
         setFocusPainted(false);
         setBackground(new Color(0, 0, 0, 0));
-        this.precio = precio;
         switch (precio) {
             case 100:
                 m = new Moneda100();

@@ -18,11 +18,13 @@ public class PanelExpendedor extends JPanel {
     private ButtonVuelto vuelto;
     private ButtonMiProducto miProducto;
     private PanelIngresoMon ingresoMon;
+    private PanelAlmacenVuelto almacenVuelto;
 
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     public PanelExpendedor() {
         super();
+        expendedor = new Expendedor(2);
         coca = new ButtonProducto("CocaPress");
         sprite = new ButtonProducto("SpritePress");
         fanta = new ButtonProducto("FantaPress");
@@ -34,6 +36,7 @@ public class PanelExpendedor extends JPanel {
         vuelto = new ButtonVuelto();
         miProducto = new ButtonMiProducto();
         ingresoMon = new PanelIngresoMon();
+        almacenVuelto = new PanelAlmacenVuelto();
 
         setOpaque(false);
         setLayout(null);
@@ -49,6 +52,7 @@ public class PanelExpendedor extends JPanel {
         add(vuelto);
         add(miProducto);
         add(ingresoMon);
+        add(almacenVuelto);
     }
     @Override
     public void paintComponent(Graphics g) {

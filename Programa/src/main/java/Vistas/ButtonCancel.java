@@ -20,8 +20,10 @@ public class ButtonCancel extends JButton {
                 if(PanelIngresoMon.hayMoneda()){
                     try{
                         PanelExpendedor.getExpendedor().comprarProducto(PanelIngresoMon.getMonPago(),null);
+                        PanelIngresoMon.setHayMoneda(false);
                     }catch (Exception a){
                         Ventana.frame().repaint();
+                        System.out.println("repintado");
                     }
                 }
             }

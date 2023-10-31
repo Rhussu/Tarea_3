@@ -19,9 +19,8 @@ El expendedor inicia con tres productos de cada tipo: Coca-Cola, Sprite, Fanta, 
 
 ### 📝 UML
 
-Además, hemos incluido una imagen del diagrama UML al inicio del repositorio con el nombre `uml.png`. En caso de que no puedas visualizarla por alguna razón, también está disponible haciendo clic [aquí](https://github.com/Angie161/Tarea_2/assets/146099765/74596bd2-c97a-4641-885e-78614c296b52)
+Además, hemos incluido una imagen del diagrama UML al inicio del repositorio con el nombre `uml.png`. En caso de que no puedas visualizarla por alguna razón, también está disponible haciendo clic [aquí](https://github.com/Rhussu/Tarea_3/assets/146099765/52d61ab3-c4ee-429d-bfe5-8411fc02665d)
 
----
 
 ### 🤝🏻 Contribuidores
 

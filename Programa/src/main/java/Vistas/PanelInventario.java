@@ -19,27 +19,27 @@ public class PanelInventario extends JPanel {
         imageIcon = new ImageIcon(getClass().getClassLoader().getResource("BolsaMon.png"));
         g.drawImage(imageIcon.getImage(), 110, 560, null);
 
-        if(ButtonMiProducto.vacio) try {
+        try {
             switch (PanelComprador.getComprador().queConsumiste()) {
                 case "sprite":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Sprite.png"));
-                    g.drawImage(imageIcon.getImage(), 110, 140, null);
+                    g.drawImage(imageIcon.getImage(), 115, 210, null);
                     break;
                 case "cocacola":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Coca.png"));
-                    g.drawImage(imageIcon.getImage(), 110, 140, null);
+                    g.drawImage(imageIcon.getImage(), 115, 210, null);
                     break;
                 case "fanta":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Fanta.png"));
-                    g.drawImage(imageIcon.getImage(), 110, 140, null);
+                    g.drawImage(imageIcon.getImage(), 115, 210, null);
                     break;
                 case "snickers":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Snick.png"));
-                    g.drawImage(imageIcon.getImage(), 110, 140, null);
+                    g.drawImage(imageIcon.getImage(), 90, 190, null);
                     break;
                 case "super8":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Super8.png"));
-                    g.drawImage(imageIcon.getImage(), 110, 140, null);
+                    g.drawImage(imageIcon.getImage(), 90, 185, null);
                     break;
             }
         } catch (NullPointerException e) {
@@ -49,7 +49,7 @@ public class PanelInventario extends JPanel {
         try {
             for (int i = 0; i <= Integer.toString(PanelComprador.getComprador().cuantoVuelto()).length(); i++) {
                 if (i == 0) {
-                    imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Cinco.png"));
+                    imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Signo.png"));
                 }else{
                     switch (Integer.toString(PanelComprador.getComprador().cuantoVuelto()).substring(i - 1, i)) {
                         case "0":

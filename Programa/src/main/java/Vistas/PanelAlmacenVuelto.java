@@ -23,7 +23,6 @@ public class PanelAlmacenVuelto extends JPanel {
             case 1500:
                 return new ImageIcon(getClass().getClassLoader().getResource("Vuelto1500.png")).getImage();
         }
-        System.out.println("Arroja imagen nula");
         return null;
     }
 
@@ -33,7 +32,6 @@ public class PanelAlmacenVuelto extends JPanel {
         try{
 
             for (int i=1; i<PanelExpendedor.getExpendedor().verTamañoDep("monVu"); i++){
-                System.out.println("Se dibuja vuelto mini");
                 g.drawImage(ImagenMon(PanelExpendedor.getExpendedor().verMoneda(i,true).getValor()),5,133 - (10*i), null);
             }
         } catch (Exception e){

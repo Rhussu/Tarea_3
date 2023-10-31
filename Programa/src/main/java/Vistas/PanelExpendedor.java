@@ -1,6 +1,6 @@
 package Vistas;
 
-import Modelos.Expendedor;
+import Modelos.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,12 +19,13 @@ public class PanelExpendedor extends JPanel {
     private ButtonMiProducto miProducto;
     private PanelIngresoMon ingresoMon;
     private PanelAlmacenVuelto almacenVuelto;
+    private PanelAlmacenMon almacenMon;
 
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     public PanelExpendedor() {
         super();
-        expendedor = new Expendedor(2);
+        expendedor = new Expendedor(3);
         coca = new ButtonProducto("CocaPress");
         sprite = new ButtonProducto("SpritePress");
         fanta = new ButtonProducto("FantaPress");
@@ -37,6 +38,7 @@ public class PanelExpendedor extends JPanel {
         miProducto = new ButtonMiProducto();
         ingresoMon = new PanelIngresoMon();
         almacenVuelto = new PanelAlmacenVuelto();
+        almacenMon = new PanelAlmacenMon();
 
         setOpaque(false);
         setLayout(null);
@@ -53,6 +55,7 @@ public class PanelExpendedor extends JPanel {
         add(miProducto);
         add(ingresoMon);
         add(almacenVuelto);
+        add(almacenMon);
     }
     @Override
     public void paintComponent(Graphics g) {
@@ -70,4 +73,10 @@ public class PanelExpendedor extends JPanel {
     public static Expendedor getExpendedor() {
         return expendedor;
     }
+
+    public static void reinicioExp(){
+        expendedor = new Expendedor(3);
+    }
 }
+
+

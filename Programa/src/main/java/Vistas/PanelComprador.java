@@ -1,6 +1,6 @@
 package Vistas;
 
-import Modelos.Comprador;
+import Modelos.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,5 +22,8 @@ public class PanelComprador extends JPanel {
 
 	public static Comprador getComprador() {
 		return comprador;
+	}
+	public static void setComprador(Moneda m, TipoProducto tipo) throws NoHayProductoException, PagoInsuficienteException, PagoIncorrectoException {
+		comprador = new Comprador(m,tipo,PanelExpendedor.getExpendedor());
 	}
 }

@@ -1,11 +1,16 @@
 package Vistas;
 
-import Modelos.TipoProducto;
-
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel utilizado para mostrar la cantidad de producto que quedan de cada uno.
+ */
 public class PanelCantProductos extends JPanel {
+
+    /**
+     * Constructor personalizado donde se le dan características al panel.
+     */
     public PanelCantProductos(){
         super();
         setOpaque(false);
@@ -13,6 +18,12 @@ public class PanelCantProductos extends JPanel {
         setBackground(new Color(255,255,255,100));
     }
 
+    /**
+     * Método para poder recorrer los depositos.
+     *
+     * @param num El número que indica cual deposito se quiere ver.
+     * @return    El nombre del depósito que se quiere ver
+     */
     public String nombreDep(int num){
         switch (num){
             case 0:
@@ -30,6 +41,12 @@ public class PanelCantProductos extends JPanel {
         }
     }
 
+    /**
+     * Método para obtener la posición X de la imagen q se desea graficar.
+     *
+     * @param num Indica la imagen que se quiere graficar con números del 0 al 4.
+     * @return  El valor de la posición en el eje X.
+     */
     public int posicionX (int num){
         switch (num){
             case 0:
@@ -47,6 +64,12 @@ public class PanelCantProductos extends JPanel {
         }
     }
 
+    /**
+     * Método para obtener la posición Y de la imagen q se desea graficar.
+     *
+     * @param num Indica la imagen que se quiere graficar con números del 0 al 4.
+     * @return  El valor de la posición en el eje Y.
+     */
     public int posicionY (int num){
         switch (num){
             case 0:
@@ -64,6 +87,11 @@ public class PanelCantProductos extends JPanel {
         }
     }
 
+    /**
+     * Override del método paintComponent(g) para mostrar los números que indican cuantas unidades quedan de un producto.
+     *
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

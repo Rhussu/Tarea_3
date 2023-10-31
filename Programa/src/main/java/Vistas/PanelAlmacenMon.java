@@ -31,13 +31,9 @@ public class PanelAlmacenMon extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         try{
-
             for (int i=0; i<PanelExpendedor.getExpendedor().verTamañoDep("monAlmacen"); i++){
-                System.out.println("Se dibuja vuelto mini");
                 g.drawImage(ImagenMon(PanelExpendedor.getExpendedor().verMoneda(i,false).getValor()),1+10*i,5, null);
             }
-        } catch (Exception e){
-            System.err.println(e);
-        }
+        } catch (IndexOutOfBoundsException e){}
     }
 }

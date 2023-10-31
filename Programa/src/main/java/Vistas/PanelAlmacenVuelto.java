@@ -34,8 +34,6 @@ public class PanelAlmacenVuelto extends JPanel {
             for (int i=1; i<PanelExpendedor.getExpendedor().verTamañoDep("monVu"); i++){
                 g.drawImage(ImagenMon(PanelExpendedor.getExpendedor().verMoneda(i,true).getValor()),5,133 - (10*i), null);
             }
-        } catch (Exception e){
-            System.err.println(e);
-        }
+        } catch (IndexOutOfBoundsException e){}
     }
 }

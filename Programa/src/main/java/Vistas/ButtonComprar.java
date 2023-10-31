@@ -35,20 +35,22 @@ public class ButtonComprar extends JButton {
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
                 if(ButtonMiProducto.vacio) try {
-
                     PanelComprador.getComprador().comprarProducto(PanelIngresoMon.getMonPago(), tipoProducto,PanelExpendedor.getExpendedor());
-                    if(ButtonMiProducto.vacio) {
-                        ButtonMiProducto.vacio = false;
-                        Ventana.frame().repaint();
-                    }
-
-                } catch (Exception ex) {
-                    System.err.println(ex);
+                    ButtonMiProducto.vacio = false;
+                    Ventana.frame().repaint();
+                } catch (PagoInsuficienteException ex) {
+                    System.out.println("Moneda insuficiente para comprar el producto deseado.");
+                } catch (PagoIncorrectoException ex) {
+                    System.out.println("No se ha ingresado ninguna moneda para pagar.");
+                } catch (NoHayProductoException ex) {
+                    System.out.println("No selecciono ningun producto o no queda ninguno.");
                 } finally {
                     PanelIngresoMon.setMonPago(null);
                     tipoProducto = null;
 
                     Ventana.frame().repaint();
+                } else {
+                    System.out.println("Retire su producto primero.");
                 }
             }
 

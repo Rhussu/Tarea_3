@@ -42,9 +42,7 @@ public class PanelInventario extends JPanel {
                     g.drawImage(imageIcon.getImage(), 90, 185, null);
                     break;
             }
-        } catch (NullPointerException e) {
-            System.out.println("Aun no se ha comprado nada");
-        }
+        } catch (NullPointerException e) {}
 
         try {
             for (int i = 0; i <= Integer.toString(PanelComprador.getComprador().cuantoVuelto()).length(); i++) {
@@ -88,8 +86,6 @@ public class PanelInventario extends JPanel {
                 }
                 g.drawImage(imageIcon.getImage(),210 - 20*(Integer.toString(PanelComprador.getComprador().cuantoVuelto()).length() - i ), 510,null);
             }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        } catch (IndexOutOfBoundsException e) {}
     }
 }

@@ -21,7 +21,10 @@ public class ButtonReset extends JButton {
             @Override
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
+                System.out.println("Expendedor reiniciado.");
                 PanelExpendedor.reinicioExp();
+                PanelIngresoMon.setMonPago(null);
+                ButtonMiProducto.vacio = true;
                 Ventana.frame().repaint();
             }
 

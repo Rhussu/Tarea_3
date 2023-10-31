@@ -38,7 +38,7 @@ public class PanelBilletera extends JPanel {
             Image image = imageIcon.getImage();
             g.drawImage(image,0,0,null);
         } catch (Exception e) {
-            System.out.println("Error el monedero");
+            System.out.println("Error al dibujar el monedero");
         }
     }
 }

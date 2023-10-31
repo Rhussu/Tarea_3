@@ -75,11 +75,8 @@ public class ButtonVuelto extends JButton {
                     g.drawImage(image, 4, 4, null);
                     break;
                 default:
-                    System.out.println("Arroja casi default");
             }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        } catch (Exception e) {}
         super.paintComponent(g);
     }
 }

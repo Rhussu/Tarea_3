@@ -86,6 +86,8 @@ public class ButtonMoneda extends JButton {
                             setToolTipText(String.valueOf(m.getSerie()));
                             break;
                     }
+                } else {
+                    System.out.println("Ya hay una moneda para pagar");
                 }
             }
 

@@ -61,10 +61,8 @@ public class PanelIngresoMon extends JPanel {
                     g.drawImage(image,0,0,null);
                     break;
                 default:
-                    System.out.println("No se ha comprado nada aún");
             }
-        } catch (NullPointerException e) {
-        }
+        } catch (NullPointerException e) {}
     }
 
     public static boolean hayMoneda(){

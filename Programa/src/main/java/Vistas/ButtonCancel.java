@@ -17,7 +17,13 @@ public class ButtonCancel extends JButton {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
+                if(PanelIngresoMon.hayMoneda()){
+                    try{
+                        PanelExpendedor.getExpendedor().comprarProducto(PanelIngresoMon.getMonPago(),null);
+                    }catch (Exception a){
+                        Ventana.frame().repaint();
+                    }
+                }
             }
 
             @Override

@@ -7,8 +7,15 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Clase que es utilizada como botón para extraer el producto entregado por la máquina expendedora.
+ */
 public class ButtonMiProducto extends JButton {
     public static boolean vacio = true;
+
+    /**
+     * Constructor personalizado donde se le dan características al boton.
+     */
     public ButtonMiProducto() {
         super();
         setOpaque(false);
@@ -54,6 +61,10 @@ public class ButtonMiProducto extends JButton {
         });
     }
 
+    /**
+     * Override el método paintComponent(g) para dibujar cosas personalizadas.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         try {

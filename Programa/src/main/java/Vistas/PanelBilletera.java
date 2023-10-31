@@ -3,11 +3,18 @@ package Vistas;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Clase que muestra la monedas para comprar.
+ */
 public class PanelBilletera extends JPanel {
     private ButtonMoneda moneda100;
     private ButtonMoneda moneda500;
     private ButtonMoneda moneda1000;
     private ButtonMoneda moneda1500;
+
+    /**
+     * Constructor personalizado donde le doy características al panel y inicio los ButtonMoneda.
+     */
     public PanelBilletera() {
         super();
         moneda100 = new ButtonMoneda(100);
@@ -29,6 +36,12 @@ public class PanelBilletera extends JPanel {
         add(moneda1000);
         add(moneda1500);
     }
+
+    /**
+     * Override del método paintComponent(g) para mostrar un fondo personalizado del panel.
+     * 
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -5,7 +5,7 @@ package Modelos;
  */
 public class Comprador {
     private String sonido;
-    private int vuelto=0;
+    private static int vuelto=0;
 
     /**
      * Este es un constructor personalizado y realiza la operación de comprar un producto en el expendedor.
@@ -21,17 +21,19 @@ public class Comprador {
         try {
             expendedor.comprarProducto(moneda, cualProducto);
             sonido = expendedor.getProducto().consumir();
-            while (true) {
-                try {
-                    vuelto += expendedor.getVuelto().getValor();
-                } catch (Exception e) {
-                    break;
-                }
-            }
+
         } catch(PagoIncorrectoException | NoHayProductoException | PagoInsuficienteException e) {
             sonido = null;
             throw e;
         } 
+    }
+
+    /**
+     * Agrega el vuelto obtenido a un total de vueltos.
+     * @param valor la cantidad de vuelto que se agregaría al total.
+     */
+    public void addVuelto(int valor){
+        vuelto+=valor;
     }
 
     /**

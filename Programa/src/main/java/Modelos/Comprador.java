@@ -5,10 +5,16 @@ package Modelos;
  */
 public class Comprador {
     private String sonido;
-    private static int vuelto=0;
+    private int vuelto=0;
 
     /**
-     * Este es un constructor personalizado y realiza la operación de comprar un producto en el expendedor.
+     * Constructor por defecto del comprador.
+     */
+    public Comprador(){
+    }
+
+    /**
+     * Este es un método para realizar la operación de comprar un producto en el expendedor.
      *
      * @param moneda                     Una Moneda con lo que se pagará.
      * @param cualProducto               El tipo de producto que se desea comprar.
@@ -17,15 +23,15 @@ public class Comprador {
      * @throws PagoInsuficienteException Si el valor de las monedas es menor al del producto.
      * @throws NoHayProductoException    En caso de que no quede el producto que se intenta comprar.
      */
-    public Comprador(Moneda moneda, TipoProducto cualProducto, Expendedor expendedor) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
+    public void comprarProducto(Moneda moneda, TipoProducto cualProducto, Expendedor expendedor) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
         try {
             expendedor.comprarProducto(moneda, cualProducto);
             sonido = expendedor.getProducto().consumir();
 
-        } catch(PagoIncorrectoException | NoHayProductoException | PagoInsuficienteException e) {
+        } catch (PagoIncorrectoException | NoHayProductoException | PagoInsuficienteException e) {
             sonido = null;
             throw e;
-        } 
+        }
     }
 
     /**

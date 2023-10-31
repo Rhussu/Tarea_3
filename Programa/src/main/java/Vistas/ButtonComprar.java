@@ -46,6 +46,7 @@ public class ButtonComprar extends JButton {
                 if(ButtonMiProducto.vacio) try {
                     PanelComprador.getComprador().comprarProducto(PanelIngresoMon.getMonPago(), tipoProducto,PanelExpendedor.getExpendedor());
                     ButtonMiProducto.vacio = false;
+                    PanelExpendedor.actualizarTipText();
                     Ventana.frame().repaint();
                 } catch (PagoInsuficienteException ex) {
                     System.out.println("Moneda insuficiente para comprar el producto deseado.");

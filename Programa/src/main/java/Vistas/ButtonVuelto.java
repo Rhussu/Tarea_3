@@ -16,23 +16,29 @@ public class ButtonVuelto extends JButton {
         setBounds(324,526,43,43);
         addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
-            }
+            public void mouseClicked(MouseEvent e) {}
 
             @Override
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
+                try{
+                    PanelComprador.getComprador().addVuelto(PanelExpendedor.getExpendedor().getVuelto().getValor());
+                    Ventana.frame().repaint();
+                }catch (Exception ex){}
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                setIcon(new ImageIcon(getClass().getClassLoader().getResource("SnikPress.png")));
+                if(PanelExpendedor.getExpendedor().verTamañoDep("monVu") !=0){
+                    setIcon(new ImageIcon(getClass().getClassLoader().getResource("SnikPress.png")));
+                }
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                setIcon(new ImageIcon(getClass().getClassLoader().getResource("SnikPress.png")));
+                if(PanelExpendedor.getExpendedor().verTamañoDep("monVu") !=0){
+                    setIcon(new ImageIcon(getClass().getClassLoader().getResource("SnikPress.png")));
+                }
             }
 
             @Override
@@ -74,5 +80,6 @@ public class ButtonVuelto extends JButton {
         } catch (Exception e) {
             System.out.println(e);
         }
+        super.paintComponent(g);
     }
 }

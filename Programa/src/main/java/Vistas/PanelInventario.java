@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PanelInventario extends JPanel {
-    public static int vuelto = 0;
 
     public PanelInventario() {
         super();
@@ -20,7 +19,7 @@ public class PanelInventario extends JPanel {
         imageIcon = new ImageIcon(getClass().getClassLoader().getResource("BolsaMon.png"));
         g.drawImage(imageIcon.getImage(), 110, 560, null);
 
-        if(!ButtonMiProducto.vacio) try {
+        if(ButtonMiProducto.vacio) try {
             switch (PanelComprador.getComprador().queConsumiste()) {
                 case "sprite":
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Sprite.png"));
@@ -48,11 +47,11 @@ public class PanelInventario extends JPanel {
         }
 
         try {
-            for (int i = 0; i <= Integer.toString(vuelto).length(); i++) {
+            for (int i = 0; i <= Integer.toString(PanelComprador.getComprador().cuantoVuelto()).length(); i++) {
                 if (i == 0) {
                     imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Cinco.png"));
                 }else{
-                    switch (Integer.toString(vuelto).substring(i - 1, i)) {
+                    switch (Integer.toString(PanelComprador.getComprador().cuantoVuelto()).substring(i - 1, i)) {
                         case "0":
                             imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Cero.png"));
                             break;
@@ -87,7 +86,7 @@ public class PanelInventario extends JPanel {
                             break;
                     }
                 }
-                g.drawImage(imageIcon.getImage(),210 - 20*(Integer.toString(vuelto).length() - i ), 510,null);
+                g.drawImage(imageIcon.getImage(),210 - 20*(Integer.toString(PanelComprador.getComprador().cuantoVuelto()).length() - i ), 510,null);
             }
         } catch (Exception e) {
             System.out.println(e);

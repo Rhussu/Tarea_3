@@ -40,34 +40,6 @@ public class ButtonMoneda extends JButton {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(!PanelIngresoMon.hayMoneda()){
-                    switch (precio) {
-                        case 100:
-                            PanelIngresoMon.setMonPago(m);
-                            Ventana.frame().repaint();
-                            m=new Moneda100();
-                            setToolTipText(String.valueOf(m.getSerie()));
-                            break;
-                        case 500:
-                            PanelIngresoMon.setMonPago(m);
-                            Ventana.frame().repaint();
-                            m=new Moneda500();
-                            setToolTipText(String.valueOf(m.getSerie()));
-                            break;
-                        case 1000:
-                            PanelIngresoMon.setMonPago(m);
-                            Ventana.frame().repaint();
-                            m=new Moneda1000();
-                            setToolTipText(String.valueOf(m.getSerie()));
-                            break;
-                        case 1500:
-                            PanelIngresoMon.setMonPago(m);
-                            Ventana.frame().repaint();
-                            m=new Moneda1500();
-                            setToolTipText(String.valueOf(m.getSerie()));
-                            break;
-                    }
-                }
             }
 
             @Override
@@ -85,6 +57,35 @@ public class ButtonMoneda extends JButton {
                     case 1500:
                         setIcon(new ImageIcon(getClass().getClassLoader().getResource("MilQuinientos.png")));
                         break;
+                }
+
+                if(!PanelIngresoMon.hayMoneda()) {
+                    switch (precio) {
+                        case 100:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m = new Moneda100();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                        case 500:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m = new Moneda500();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                        case 1000:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m = new Moneda1000();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                        case 1500:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m = new Moneda1500();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                    }
                 }
             }
 
@@ -143,17 +144,4 @@ public class ButtonMoneda extends JButton {
             }
         });
     }
-
-    /*@Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        try {
-            ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource(ruta));
-            Image image = imageIcon.getImage();
-            g.drawImage(image,0,0,null);
-            System.out.println("Moneda cargada con exito");
-        } catch (Exception e) {
-            System.out.println("Error al cargar alguna moneda");
-        }
-    }*/
 }

@@ -8,7 +8,8 @@
 
 En este proyecto, hemos desarrollado una interfaz gráfica para un expendedor que permite la compra de varios productos. La aplicación se diseñó con el objetivo de proporcionar una experiencia intuitiva y fácil para los usuarios.
 
-![InterfazGrafica](https://github.com/Rhussu/Tarea_3/assets/146099765/a159d239-59d9-4f7b-a5de-06cc265a5085)
+![Captura de pantalla 2023-10-31 185819](https://github.com/Rhussu/Tarea_3/assets/146099765/7c8bef44-dca6-40a0-aaa2-a91d05ee485b)
+
 Créditos de los dibujos para Angie Ramírez.
 
 ### 📋 Descripción y instrucciones de uso de la Interfaz.

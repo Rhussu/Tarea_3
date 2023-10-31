@@ -168,9 +168,54 @@ public class Expendedor{
         return monVu.get();
     }
 
+    /**
+     * Saca el producto comprado en la máquina expendedora, el cual está almacenado en depUnico.
+     * @return Producto solicitado de depUnico.
+     */
     public Producto getProducto(){
         Producto aux = depUnico;
         depUnico = null;
         return aux;
+    }
+
+    /**
+     * Permite ver qué moneda se encuentra en cualquier índice de alguno de los depósitos de monedas existentes.
+     * @param numero entero que indicará la posición de la moneda que se quiere revisar.
+     * @param almacenVuelto booleano que indicará a cuál de los dos depósitos de monedas se quiere acceder. Si es true, entonces se accederá a monVu.
+     * @return Moneda que se quiere revisar.
+     */
+    public Moneda verMoneda(int numero, boolean almacenVuelto){
+        if(almacenVuelto){
+            return monVu.verElemento(numero);
+        }
+        else{
+            return monAlmacen.verElemento(numero);
+        }
+    }
+
+    /**
+     * Verifica el tamaño de los diferentes depósitos dentro del expendedor.
+     * @param nombreDep String para identificar el nombre del depósito solicitado.
+     * @return entero con el tamaño del depósito solicitado.
+     */
+    public int verTamañoDep(String nombreDep){
+        switch (nombreDep){
+            case "monAlmacen":
+                return monAlmacen.check();
+            case "monVu":
+                return monVu.check();
+            case "coca":
+                return coca.check();
+            case "sprite":
+                return sprite.check();
+            case "fanta":
+                return fanta.check();
+            case "snikers":
+                return snikers.check();
+            case "super8":
+                return super8.check();
+            default:
+                return -1;
+        }
     }
 }

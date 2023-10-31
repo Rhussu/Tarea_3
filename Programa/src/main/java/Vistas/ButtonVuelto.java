@@ -41,4 +41,38 @@ public class ButtonVuelto extends JButton {
             }
         });
     }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        ImageIcon imageIcon;
+        Image image;
+        try {
+            switch (PanelExpendedor.getExpendedor().verMoneda(0, true).getValor()) {
+                case 100:
+                    imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini100.png"));
+                    image = imageIcon.getImage();
+                    g.drawImage(image, 4, 4, null);
+                    break;
+                case 500:
+                    imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini500.png"));
+                    image = imageIcon.getImage();
+                    g.drawImage(image, 4, 4, null);
+                    break;
+                case 1000:
+                    imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini1000.png"));
+                    image = imageIcon.getImage();
+                    g.drawImage(image, 4, 4, null);
+                    break;
+                case 1500:
+                    imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Mini1500.png"));
+                    image = imageIcon.getImage();
+                    g.drawImage(image, 4, 4, null);
+                    break;
+                default:
+                    System.out.println("Arroja casi default");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }

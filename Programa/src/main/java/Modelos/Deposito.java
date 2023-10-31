@@ -50,4 +50,14 @@ public class Deposito<T>{
     public int check(){
         return almacen.size();
     }
+
+    /**
+     * Verifica cuál es el objeto en la posición i sin sacarlo del Arraylist.
+     *
+     * @param i entero que denotará la posición a revisar dentro del Arraylist.
+     * @return Objeto solicitado.
+     */
+    public T verElemento(int i){
+        return almacen.get(i);
+    }
 }

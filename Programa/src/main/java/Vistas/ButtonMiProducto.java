@@ -22,6 +22,10 @@ public class ButtonMiProducto extends JButton {
             @Override
             public void mouseClicked(MouseEvent e) {
                 //Aqui va lo que ocurre al precionarlo
+                if(!vacio) {
+                    producto = PanelExpendedor.getExpendedor().getProducto();
+                    Ventana.frame().repaint();
+                }
             }
 
             @Override

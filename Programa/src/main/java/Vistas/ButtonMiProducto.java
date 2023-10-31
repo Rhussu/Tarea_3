@@ -9,7 +9,6 @@ import java.awt.event.MouseListener;
 
 public class ButtonMiProducto extends JButton {
     public static boolean vacio = true;
-    public static Producto producto;
     public ButtonMiProducto() {
         super();
         setOpaque(false);
@@ -17,18 +16,18 @@ public class ButtonMiProducto extends JButton {
         setBorderPainted(false);
         setFocusPainted(false);
         setBackground(new Color(0, 0, 0, 0));
-        setBounds(415,435,82,130);
+        setBounds(430,471,55,100);
         addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
-
-            }
+            public void mouseClicked(MouseEvent e) {}
 
             @Override
             public void mousePressed(MouseEvent e) {
                 if(!vacio) {
                     setIcon(null);
+                    vacio=true;
+                    PanelComprador.getComprador().consumirMiProducto();
+                    Ventana.frame().repaint();
                 }
             }
 
@@ -59,26 +58,38 @@ public class ButtonMiProducto extends JButton {
     public void paintComponent(Graphics g) {
         try {
             if (!vacio) {
-                switch (producto.consumir()) {
+                System.out.println("hola");
+                if(PanelComprador.getComprador().queConsumiste() == null){
+                    System.out.println("el producto es null");
+                }
+                switch(PanelComprador.getComprador().verProducto().consumir()) {
                     case "cocacola":
-                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniCoca.png"))).getImage(), 5, 5, null);
+                        System.out.printf("Cocacola");
+                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniCoca.png"))).getImage(), 5, 19, null);
                         break;
                     case "sprite":
-                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniSprite.png"))).getImage(), 5, 5, null);
+                        System.out.printf("Sprite");
+                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniSprite.png"))).getImage(), 5, 19, null);
                         break;
                     case "fanta":
-                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniFanta.png"))).getImage(), 5, 5, null);
+                        System.out.printf("Fanta");
+                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniFanta.png"))).getImage(), 5, 19, null);
                         break;
                     case "super8":
-                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniSuper8.png"))).getImage(), 5, 5, null);
+                        System.out.printf("Super8");
+                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniSuper8.png"))).getImage(), 5, 1, null);
                         break;
-                    case "snicker":
-                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniSnicker.png"))).getImage(), 5, 5, null);
+                    case "snickers":
+                        System.out.printf("Snicker");
+                        g.drawImage((new ImageIcon(getClass().getClassLoader().getResource("MiniSnicker.png"))).getImage(), 5, 15, null);
                         break;
+                    default:
+                        System.out.println("Awa");
                 }
             }
         }catch (Exception e){
             System.err.println(e);
         }
+        super.paintComponent(g);
     }
 }

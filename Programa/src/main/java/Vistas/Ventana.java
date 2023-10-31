@@ -5,11 +5,18 @@ import java.awt.*;
 import javax.sound.sampled.*;
 import java.io.*;
 
+/**
+ * Clase que contiene el frame del programa y la musica.
+ */
 public class Ventana extends JFrame {
     public static final int ALTO = 800;
     public static final int ANCHO = 1000;
     private static Ventana instancia;
     private PanelPrincipal panelPrincipal;
+
+    /**
+     * Constructor personalizado.
+     */
     private Ventana(){
         reproducirMusica();
         panelPrincipal = new PanelPrincipal();
@@ -23,6 +30,9 @@ public class Ventana extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Método para reproducir la musica.
+     */
     private void reproducirMusica() {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
@@ -38,7 +48,10 @@ public class Ventana extends JFrame {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Método para obtener la instancia de la ventana.
+     */
     public static synchronized Ventana frame() {
         if (instancia == null) {
             instancia = new Ventana();

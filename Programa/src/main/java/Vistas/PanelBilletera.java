@@ -39,7 +39,7 @@ public class PanelBilletera extends JPanel {
 
     /**
      * Override del método paintComponent(g) para mostrar un fondo personalizado del panel.
-     * 
+     *
      * @param g the <code>Graphics</code> object to protect
      */
     @Override

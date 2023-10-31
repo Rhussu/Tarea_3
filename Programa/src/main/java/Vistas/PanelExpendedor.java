@@ -16,7 +16,7 @@ public class PanelExpendedor extends JPanel {
     private ButtonReset reset;
     private ButtonCancel cancel;
     private ButtonVuelto vuelto;
-    private ButtonMiProducto miProducto;
+    private static ButtonMiProducto miProducto;
     private PanelIngresoMon ingresoMon;
     private PanelAlmacenVuelto almacenVuelto;
     private PanelAlmacenMon almacenMon;
@@ -24,9 +24,10 @@ public class PanelExpendedor extends JPanel {
 
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
+    private static final int numProductos = 3;
     public PanelExpendedor() {
         super();
-        expendedor = new Expendedor(3);
+        expendedor = new Expendedor(numProductos);
         coca = new ButtonProducto("CocaPress");
         sprite = new ButtonProducto("SpritePress");
         fanta = new ButtonProducto("FantaPress");
@@ -78,7 +79,11 @@ public class PanelExpendedor extends JPanel {
     }
 
     public static void reinicioExp(){
-        expendedor = new Expendedor(3);
+        expendedor = new Expendedor(numProductos);
+    }
+
+    public static void actualizarTipText() {
+        miProducto.setToolTipText(String.valueOf(PanelComprador.getComprador().verProducto().getSerie()));
     }
 }
 

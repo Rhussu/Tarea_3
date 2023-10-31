@@ -16,21 +16,22 @@ public class ButtonCancel extends JButton {
         setBounds(303,310,84,40);
         addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                if(PanelIngresoMon.hayMoneda()){
-                    try{
-                        PanelExpendedor.getExpendedor().comprarProducto(PanelIngresoMon.getMonPago(),null);
-                        PanelIngresoMon.setHayMoneda(false);
-                    }catch (Exception a){
-                        Ventana.frame().repaint();
-                        System.out.println("repintado");
-                    }
-                }
-            }
+            public void mouseClicked(MouseEvent e) {}
 
             @Override
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
+                if(PanelIngresoMon.hayMoneda()){
+                    try{
+                        PanelExpendedor.getExpendedor().comprarProducto(PanelIngresoMon.getMonPago(),null);
+                    }catch (Exception a){
+                        Ventana.frame().repaint();
+                        System.out.println("repintado");
+                    }finally {
+                        PanelIngresoMon.setHayMoneda(false);
+                        ButtonComprar.tipoProducto=null;
+                    }
+                }
             }
 
             @Override

@@ -20,6 +20,10 @@ public class PanelIngresoMon extends JPanel {
         return aux;
     }
 
+    public static int getPrecioMoneda(){
+        return moneda.getValor();
+    }
+
     public static void setHayMoneda(boolean estado){
         hayMoneda=estado;
     }

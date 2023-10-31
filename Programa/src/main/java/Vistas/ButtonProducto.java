@@ -9,8 +9,10 @@ import java.awt.event.MouseListener;
 
 public class ButtonProducto extends JButton {
     private TipoProducto tipo;
+    private String ruta;
     public ButtonProducto(String ruta) {
         super();
+        this.ruta = ruta;
         setOpaque(false);
         setContentAreaFilled(false);
         setBorderPainted(false);
@@ -31,38 +33,61 @@ public class ButtonProducto extends JButton {
                 break;
             case "SuperPress":
                 setBounds(41,307,130,120);
-                tipo = TipoProducto.SNICKERS;
+                tipo = TipoProducto.SUPER8;
                 break;
             case "SnikPress":
                 setBounds(164,307,120,120);
-                tipo = TipoProducto.SUPER8;
+                tipo = TipoProducto.SNICKERS;
                 break;
         }
         addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
-            }
+            public void mouseClicked(MouseEvent e) {}
 
             @Override
             public void mousePressed(MouseEvent e) {
-                setIcon(null);
+                ButtonComprar.tipoProducto = tipo;
+                if(ButtonComprar.tipoProducto != tipo){
+                    setIcon(null);
+                }
+                Ventana.frame().repaint();
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
+                if(ButtonComprar.tipoProducto!=tipo){
+                    setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
+                }
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
+                if(ButtonComprar.tipoProducto!=tipo){
+                    setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
+                }
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                setIcon(null);
+                if(ButtonComprar.tipoProducto != tipo){
+                    setIcon(null);
+                }
             }
         });
+    }
+
+    private void seleccionado(){
+        if(ButtonComprar.tipoProducto==tipo){
+            setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
+        }
+        else{
+            setIcon(null);
+        }
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        seleccionado();
     }
 }

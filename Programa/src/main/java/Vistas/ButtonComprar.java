@@ -29,7 +29,7 @@ public class ButtonComprar extends JButton {
                 setIcon(null);
                 if(ButtonMiProducto.vacio) try {
 
-                    PanelComprador.setComprador(PanelIngresoMon.getMonPago(), tipoProducto);
+                    PanelComprador.getComprador().comprarProducto(PanelIngresoMon.getMonPago(), tipoProducto,PanelExpendedor.getExpendedor());
                     if(ButtonMiProducto.vacio) {
                         ButtonMiProducto.producto = PanelExpendedor.getExpendedor().getProducto();
                         ButtonMiProducto.vacio = false;

@@ -6,15 +6,15 @@
 
 ### 💻 Interfaz Gráfica
 
-En este proyecto, hemos desarrollado una interfaz gráfica para un expendedor que permite la compra de varios productos. La aplicación se diseñó con el objetivo de proporcionar una experiencia intuitiva y fácil de usar para los usuarios.
+En este proyecto, hemos desarrollado una interfaz gráfica para un expendedor que permite la compra de varios productos. La aplicación se diseñó con el objetivo de proporcionar una experiencia intuitiva y fácil para los usuarios.
 
 ![InterfazGrafica](https://github.com/Rhussu/Tarea_3/assets/146099765/a159d239-59d9-4f7b-a5de-06cc265a5085)
-Créditos de los dibujos para Angie Ramirez.
+Créditos de los dibujos para Angie Ramírez.
 
 ### 📋 Descripción y instrucciones de uso de la Interfaz.
 Nuestra interfaz presenta un Comprador que incluye la Billetera y el Inventario, brindando una perspectiva de primera persona. En la parte izquierda, se encuentra un suministro infinito de monedas, cada una identificada con su número de serie al colocar el mouse sobre ellas. A la derecha, se muestra el espacio para el producto consumido, mientras que en la parte inferior se visualiza el monedero del vuelto, detallando la cantidad recibida.
 
-El expendedor inicia con tres productos de cada tipo: Coca-Cola, Sprite, Fanta, Super 8 y Snickers. Para realizar una compra, basta con ingresar una moneda presionando a la izquierda y seleccionar el producto deseado antes de hacer clic en el botón "buy". Si se desea cancelar la compra, simplemente se presiona el botón "cancel". También existe la opción de reiniciar el expendedor con el botón "reset". Una vez que se realiza una compra, el producto adquirido se coloca en la bandeja, debiendo hacer clic para recogerlo y consumirlo.
+El expendedor inicia con tres productos de cada tipo: Coca-Cola, Sprite, Fanta, Super 8 y Snickers. Para realizar una compra, basta con ingresar una moneda presionando a la izquierda y seleccionar el producto deseado antes de hacer clic en el botón "buy". Si se desea cancelar la compra, simplemente se presiona el botón "cancel". También existe la opción de reiniciar el expendedor con el botón "reset". Una vez que se realiza una compra, el producto adquirido se coloca en la bandeja, si uno deja el mouse sobre él, mostrara su número de serie. Luego, al hacer clic, se recogerá y consumirá.
 
 ### 📝 UML
 

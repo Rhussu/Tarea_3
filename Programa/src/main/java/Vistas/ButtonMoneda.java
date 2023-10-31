@@ -40,7 +40,34 @@ public class ButtonMoneda extends JButton {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
+                if(!PanelIngresoMon.hayMoneda()){
+                    switch (precio) {
+                        case 100:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m=new Moneda100();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                        case 500:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m=new Moneda500();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                        case 1000:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m=new Moneda1000();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                        case 1500:
+                            PanelIngresoMon.setMonPago(m);
+                            Ventana.frame().repaint();
+                            m=new Moneda1500();
+                            setToolTipText(String.valueOf(m.getSerie()));
+                            break;
+                    }
+                }
             }
 
             @Override

@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import java.awt.*;
 import javax.sound.sampled.*;
 import java.io.*;
+import java.net.URL;
 
 /**
  * Clase que contiene el frame del programa y la musica.
@@ -36,8 +37,12 @@ public class Ventana extends JFrame {
     private void reproducirMusica() {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
-            File archivoMusica = new File(classLoader.getResource("MusicaDeFondo.wav").getFile());
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(archivoMusica);
+            URL resourceURL = classLoader.getResource("MusicaDeFondo.wav");
+            if (resourceURL == null) {
+                System.out.println("El archivo de sonido no se encuentra en el classpath.");
+                return;
+            }
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(resourceURL);
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -48,7 +53,8 @@ public class Ventana extends JFrame {
             e.printStackTrace();
         }
     }
-    
+
+
     /**
      * Método para obtener la instancia de la ventana.
      */

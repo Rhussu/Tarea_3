@@ -16,13 +16,13 @@ public class ButtonReset extends JButton {
         setBounds(41,533,110,49);
         addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                //Aqui va lo que ocurre al precionarlo
-            }
+            public void mouseClicked(MouseEvent e) {}
 
             @Override
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
+                PanelExpendedor.reinicioExp();
+                Ventana.frame().repaint();
             }
 
             @Override

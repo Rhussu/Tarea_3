@@ -16,9 +16,9 @@ public class PanelBilletera extends JPanel {
         moneda1500 = new ButtonMoneda(1500);
 
         moneda1500.setBounds(18,140,127,127);
-        moneda1000.setBounds(18,270,127,127);
-        moneda500.setBounds(18,400,127,127);
-        moneda100.setBounds(18,530,127,127);
+        moneda1000.setBounds(18,290,127,127);
+        moneda500.setBounds(18,440,127,127);
+        moneda100.setBounds(18,590,127,127);
 
         setOpaque(false);
         setLayout(null);

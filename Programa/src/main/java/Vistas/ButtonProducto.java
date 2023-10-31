@@ -47,31 +47,22 @@ public class ButtonProducto extends JButton {
             @Override
             public void mousePressed(MouseEvent e) {
                 ButtonComprar.tipoProducto = tipo;
-                if(ButtonComprar.tipoProducto != tipo){
-                    setIcon(null);
-                }
                 Ventana.frame().repaint();
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                if(ButtonComprar.tipoProducto!=tipo){
-                    setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
-                }
+
             }
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                if(ButtonComprar.tipoProducto!=tipo){
-                    setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
-                }
+
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                if(ButtonComprar.tipoProducto != tipo){
-                    setIcon(null);
-                }
+
             }
         });
     }

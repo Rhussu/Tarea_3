@@ -3,13 +3,25 @@ package Vistas;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel que muestra el vuelto obtenido y el último objeto consumido.
+ */
 public class PanelInventario extends JPanel {
 
+    /**
+     * Constructor personalizado donde se le dan características al panel.
+     */
     public PanelInventario() {
         super();
         setOpaque(false);
         setBounds(Ventana.ANCHO - 243,0,243,Ventana.ALTO);
     }
+
+    /**
+     * Override de paintComponent(g) para pinta el producto consumido.
+     *
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -47,10 +47,18 @@ public class ButtonMoneda extends JButton {
         }
         setToolTipText(String.valueOf(m.getSerie()));
         addMouseListener(new MouseListener() {
+            /**
+             * Evento ejecutado al cliquear al botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseClicked(MouseEvent e) {
             }
 
+            /**
+             * Evento ejecutado al presionar el botón. Permite ingresar la moneda presionada al expendedor.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mousePressed(MouseEvent e) {
                 switch (precio) {
@@ -100,6 +108,10 @@ public class ButtonMoneda extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al soltar el botón. Muestra una imagen de la moneda, oscurecida, para generar el efecto de que fue presionada.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseReleased(MouseEvent e) {
                 switch (precio) {
@@ -118,6 +130,10 @@ public class ButtonMoneda extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al entrar el botón. Muestra una imagen de la moneda, oscurecida, para generar el efecto de que se puede presionar.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 switch (precio) {
@@ -136,6 +152,10 @@ public class ButtonMoneda extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al salir del botón. Establece la imagen original de las monedas.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 switch (precio) {

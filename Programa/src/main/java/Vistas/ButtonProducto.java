@@ -50,28 +50,46 @@ public class ButtonProducto extends JButton {
                 break;
         }
         addMouseListener(new MouseListener() {
+            /**
+             * Evento ejecutado al cliquear el botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
-            public void mouseClicked(MouseEvent e) {}
+            public void mouseClicked(MouseEvent e) {
+            }
 
+            /**
+             * Evento ejecutado al presionar el botón. Permite seleccionar el producto en la máquina expendedora.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mousePressed(MouseEvent e) {
                 ButtonComprar.tipoProducto = tipo;
                 Ventana.frame().repaint();
             }
 
+            /**
+             * Evento ejecutado al soltar el botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseReleased(MouseEvent e) {
-
             }
 
+            /**
+             * Evento ejecutado al entrar al botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
-
             }
 
+            /**
+             * Evento ejecutado al salir del botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
-
             }
         });
     }
@@ -89,7 +107,7 @@ public class ButtonProducto extends JButton {
     }
 
     /**
-     * Override del metodo paintComponent(g) para dibujar personalizadamente.
+     * Override del método paintComponent(g) para dibujar personalizadamente.
      *
      * @param g the <code>Graphics</code> object to protect
      */

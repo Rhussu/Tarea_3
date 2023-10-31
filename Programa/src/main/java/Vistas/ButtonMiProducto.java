@@ -14,7 +14,7 @@ public class ButtonMiProducto extends JButton {
     public static boolean vacio = true;
 
     /**
-     * Constructor personalizado donde se le dan características al boton.
+     * Constructor personalizado donde se le dan características al botón.
      */
     public ButtonMiProducto() {
         super();
@@ -25,9 +25,17 @@ public class ButtonMiProducto extends JButton {
         setBackground(new Color(0, 0, 0, 0));
         setBounds(430,471,55,100);
         addMouseListener(new MouseListener() {
+            /**
+             * Evento ejecutado al cliquear el botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseClicked(MouseEvent e) {}
 
+            /**
+             * Evento ejecutado al presionar el botón. Permite sacar el producto del dispensador de la máquina expendedora.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mousePressed(MouseEvent e) {
                 if(!vacio) {
@@ -38,6 +46,10 @@ public class ButtonMiProducto extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al soltar el botón. Muestra una imagen de la zona del producto oscurecida para generar el efecto de recolección.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseReleased(MouseEvent e) {
                 if(!vacio) {
@@ -45,6 +57,10 @@ public class ButtonMiProducto extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al entrar al botón. Muestra una imagen de la zona del producto oscurecida para generar el efecto de habilitación para recolección
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 if(!vacio) {
@@ -52,6 +68,10 @@ public class ButtonMiProducto extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al salir del botón.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 if(!vacio) {

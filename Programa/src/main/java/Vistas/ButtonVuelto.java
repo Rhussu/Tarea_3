@@ -5,7 +5,13 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Clase que implementa visualmente una sección para recoger las monedas de vuelto tras realizar o cancelar alguna compra en el expendedor.
+ */
 public class ButtonVuelto extends JButton {
+    /**
+     * Constructor de ButtonVuelto. Establece los parámetros iniciales para visualizarlo en la interfaz gráfica.
+     */
     public ButtonVuelto() {
         super();
         setOpaque(false);
@@ -15,9 +21,19 @@ public class ButtonVuelto extends JButton {
         setBackground(new Color(0, 0, 0, 0));
         setBounds(324,526,43,43);
         addMouseListener(new MouseListener() {
+            /**
+             * Evento ejecutado al cliquear al botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
-            public void mouseClicked(MouseEvent e) {}
+            public void mouseClicked(MouseEvent e) {
 
+            }
+
+            /**
+             * Evento ejecutado al presionar el botón. Permite sacar las monedas de vuelto del dispensador de monedas de vuelto.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
@@ -27,6 +43,10 @@ public class ButtonVuelto extends JButton {
                 }catch (Exception ex){}
             }
 
+            /**
+             * Evento ejecutado al soltar el botón.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseReleased(MouseEvent e) {
                 if(PanelExpendedor.getExpendedor().verTamañoDep("monVu") !=0){
@@ -34,6 +54,10 @@ public class ButtonVuelto extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al entrar al botón. Muestra una imagen de la zona donde la moneda debe recibirse, generando un efecto de posible recolección de la moneda.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 if(PanelExpendedor.getExpendedor().verTamañoDep("monVu") !=0){
@@ -41,6 +65,10 @@ public class ButtonVuelto extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al salir del botón.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 setIcon(null);
@@ -48,6 +76,10 @@ public class ButtonVuelto extends JButton {
         });
     }
 
+    /**
+     * Override el método paintComponent(g) para dibujar los tipos de monedas en el dispensador según correspondan.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         ImageIcon imageIcon;

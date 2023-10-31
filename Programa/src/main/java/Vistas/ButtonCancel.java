@@ -24,14 +24,14 @@ public class ButtonCancel extends JButton {
 
             /**
              * Evento ejecutado al cliquear el botón. No se realiza implementación, pues no es requerido.
-             * @param e evento a ser procesado
+             * @param e evento a ser procesado.
              */
             @Override
             public void mouseClicked(MouseEvent e) {}
 
             /**
              * Evento ejecutado al presionar el botón. Genera una compra con un producto nulo para que se almacene la moneda en el almacén de vuelto.
-             * @param e evento a ser procesado
+             * @param e evento a ser procesado.
              */
             @Override
             public void mousePressed(MouseEvent e) {
@@ -50,7 +50,7 @@ public class ButtonCancel extends JButton {
 
             /**
              * Evento ejecutado al soltar el botón. Muestra una imagen del botón presionado para generar el efecto de activación.
-             * @param e evento a ser procesado
+             * @param e evento a ser procesado.
              */
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -58,8 +58,8 @@ public class ButtonCancel extends JButton {
             }
 
             /**
-             * Evento ejecutado al entrar el botón. Muestra una imagen del botón presionado para generar el efecto de activación.
-             * @param e evento a ser procesado
+             * Evento ejecutado al entrar al botón. Muestra una imagen del botón presionado para generar el efecto de activación.
+             * @param e evento a ser procesado.
              */
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -67,8 +67,8 @@ public class ButtonCancel extends JButton {
             }
 
             /**
-             * Evento ejecutado al salir del botón. Muestra
-             * @param e evento a ser procesado
+             * Evento ejecutado al salir del botón.
+             * @param e evento a ser procesado.
              */
             @Override
             public void mouseExited(MouseEvent e) {

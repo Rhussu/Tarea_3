@@ -28,9 +28,18 @@ public class ButtonComprar extends JButton {
         setBackground(new Color(0, 0, 0, 0));
         setBounds(304,240,80,50);
         addMouseListener(new MouseListener() {
+
+            /**
+             * Evento ejecutado al cliquear el botón. No se realiza implementación, pues no es requerido.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseClicked(MouseEvent e) {}
 
+            /**
+             * Evento ejecutado al presionar el botón. Genera una compra con el producto seleccionado, actualizando los valores de la interfaz.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mousePressed(MouseEvent e) {
                 setIcon(null);
@@ -54,16 +63,28 @@ public class ButtonComprar extends JButton {
                 }
             }
 
+            /**
+             * Evento ejecutado al soltar el botón. Muestra una imagen del botón presionado para generar el efecto de activación.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseReleased(MouseEvent e) {
                 setIcon(new ImageIcon(getClass().getClassLoader().getResource("BuyPress.png")));
             }
 
+            /**
+             * Evento ejecutado al entrar al botón. Muestra una imagen del botón presionado para generar el efecto de activación.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseEntered(MouseEvent e) {
                 setIcon(new ImageIcon(getClass().getClassLoader().getResource("BuyPress.png")));
             }
 
+            /**
+             * Evento ejecutado al salir del botón.
+             * @param e evento a ser procesado.
+             */
             @Override
             public void mouseExited(MouseEvent e) {
                 setIcon(null);

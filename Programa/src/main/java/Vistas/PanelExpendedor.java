@@ -5,6 +5,9 @@ import Modelos.*;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel que contiene multiples otros paneles y representa nuestro expendedor.
+ */
 public class PanelExpendedor extends JPanel {
     private static Expendedor expendedor;
     private ButtonProducto coca;
@@ -25,6 +28,10 @@ public class PanelExpendedor extends JPanel {
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
     private static final int numProductos = 3;
+
+    /**
+     * Constructor personalizado donde se le dan características al panel y se le agregan muchos otros.
+     */
     public PanelExpendedor() {
         super();
         expendedor = new Expendedor(numProductos);
@@ -61,6 +68,12 @@ public class PanelExpendedor extends JPanel {
         add(almacenVuelto);
         add(almacenMon);
     }
+
+    /**
+     * Override de paintComponenet(g) para mostrar la imagen del expendedor.
+     *
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -74,17 +87,26 @@ public class PanelExpendedor extends JPanel {
         }
     }
 
+    /**
+     * Getter de la variable expendedor.
+     *
+     * @return El expendedor.
+     */
     public static Expendedor getExpendedor() {
         return expendedor;
     }
 
+    /**
+     * Método para reiniciar el expendedor.
+     */
     public static void reinicioExp(){
         expendedor = new Expendedor(numProductos);
     }
 
+    /**
+     * Método para actualizar el número de serie que se muestra en ButtonMiProducto.
+     */
     public static void actualizarTipText() {
         miProducto.setToolTipText(String.valueOf(PanelComprador.getComprador().verProducto().getSerie()));
     }
 }
-
-

@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * Esta clase es para seleccionar un tipo de producto que se desea comprar.
+ * Esta clase es un botón utilizado para realizar la compra.
  */
 public class ButtonComprar extends JButton {
     public static TipoProducto tipoProducto = null;

@@ -20,6 +20,7 @@ public class PanelExpendedor extends JPanel {
     private PanelIngresoMon ingresoMon;
     private PanelAlmacenVuelto almacenVuelto;
     private PanelAlmacenMon almacenMon;
+    private PanelCantProductos cantProductos;
 
     public static final int ALTO = 700;
     public static final int ANCHO = 600;
@@ -39,10 +40,12 @@ public class PanelExpendedor extends JPanel {
         ingresoMon = new PanelIngresoMon();
         almacenVuelto = new PanelAlmacenVuelto();
         almacenMon = new PanelAlmacenMon();
+        cantProductos = new PanelCantProductos();
 
         setOpaque(false);
         setLayout(null);
         setBounds(280,12,PanelExpendedor.ANCHO,PanelExpendedor.ALTO);
+        add(cantProductos);
         add(coca);
         add(sprite);
         add(fanta);

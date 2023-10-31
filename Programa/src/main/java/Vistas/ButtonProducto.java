@@ -7,9 +7,18 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Clase que es utilizada como botón para seleccionar el producto que se desea comprar.
+ */
 public class ButtonProducto extends JButton {
     private TipoProducto tipo;
     private String ruta;
+
+    /**
+     * Constructor personalizado en el que se le dan características al botón.
+     *
+     * @param ruta El nombre de la imagen del producto a representar.
+     */
     public ButtonProducto(String ruta) {
         super();
         this.ruta = ruta;
@@ -67,6 +76,9 @@ public class ButtonProducto extends JButton {
         });
     }
 
+    /**
+     * Método para oscurecer el producto seleccionado.
+     */
     private void seleccionado(){
         if(ButtonComprar.tipoProducto==tipo){
             setIcon(new ImageIcon(getClass().getClassLoader().getResource(ruta + ".png")));
@@ -76,6 +88,11 @@ public class ButtonProducto extends JButton {
         }
     }
 
+    /**
+     * Override del metodo paintComponent(g) para dibujar personalizadamente.
+     *
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

@@ -3,8 +3,14 @@ package Vistas;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel que muestra la monedas con las que se han comprador productos.
+ */
 public class PanelAlmacenMon extends JPanel {
 
+    /**
+     * Constructor personalizado en el que se le dan características al panel.
+     */
     public PanelAlmacenMon() {
         super();
         setOpaque(false);
@@ -12,6 +18,12 @@ public class PanelAlmacenMon extends JPanel {
 
     }
 
+    /**
+     * Método para obtener la imagen, correspondiente a la moneda deseada, desde resources.
+     *
+     * @param valor El valor de la moneda de la cual se desea obtener su imagen.
+     * @return La imagen el la moneda deseada.
+     */
     private Image ImagenMon(int valor){
         switch (valor){
             case 100:
@@ -27,6 +39,11 @@ public class PanelAlmacenMon extends JPanel {
         return null;
     }
 
+    /**
+     * Override del metodo paintComponent(g) para graficar las monedas que estan en el monAlmacen del expendedor.
+     *
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

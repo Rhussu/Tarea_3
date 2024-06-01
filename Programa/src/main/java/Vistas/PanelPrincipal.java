@@ -31,7 +31,7 @@ public class PanelPrincipal extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         try {
-            ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("fondo.png"));
+            ImageIcon imageIcon = new ImageIcon(getClass().getClassLoader().getResource("Fondo.png"));
             Image image = imageIcon.getImage();
             g.drawImage(image, 0, 0,null);
         } catch (Exception e) {
